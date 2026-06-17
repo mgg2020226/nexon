@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Nexon",
   description: "Impulsamos el crecimiento empresarial mediante estrategia, desarrollo de negocios, inteligencia de mercado y tecnología. Somos el socio estratégico para empresas que buscan expandirse y generar resultados sostenibles.",
+  icons: {
+    icon: "/logo.svg",
+  },
 };
 
 export default function RootLayout({
