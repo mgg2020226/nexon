@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Menu, X, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { useScroll } from "@/lib/useScroll";
 
 interface NavLink {
   label: string;
@@ -17,19 +18,22 @@ interface HeroNavProps {
 
 export function Header({ links, cta }: HeroNavProps) {
   const [open, setOpen] = useState(false);
+  const scrolled = useScroll(200);
 
   return (
-    <nav className="absolute inset-x-0 top-4 z-50 mx-auto w-full lg:max-w-[calc(100%-4rem)]">
+    <nav className={`fixed inset-x-0 top-4 z-50 mx-auto w-full lg:max-w-[calc(100%-4rem)] transition-all duration-300 ${
+      scrolled ? "backdrop-blur-lg bg-white/80 border-b border-gray-200 rounded-lg shadow-lg" : ""
+    }`}>
       <div className="mx-auto px-6 lg:px-8">
         {/* Main bar */}
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Image
-            src="/logotipo_white.svg"
+            src={scrolled ? "/logotipo_black.svg" : "/logotipo_white.svg"}
             alt="Nexon logo"
             width={120}
             height={120}
-            className="rounded-lg flex-shrink-0"
+            className="rounded-lg flex-shrink-0 transition-opacity duration-300"
           />
 
           {/* Desktop nav — centered absolutely */}
@@ -38,8 +42,10 @@ export function Header({ links, cta }: HeroNavProps) {
               <li key={item.label}>
                 <a
                   href={item.href}
-                  className="cursor-pointer text-sm font-medium px-4 py-2 rounded-md transition-colors hover:bg-white/5 block"
-                  style={{ color: "rgba(252, 253, 253, 0.75)" }}
+                  className={`cursor-pointer text-sm font-medium px-4 py-2 rounded-md transition-colors hover:bg-white/5 block ${
+                    scrolled ? "text-gray-700 hover:bg-gray-100 hover:bg-blue/5 block" : ""
+                  }`}
+                  style={{ color: scrolled ? undefined : "rgba(252, 253, 253, 0.75)" }}
                 >
                   {item.label}
                 </a>
@@ -65,8 +71,10 @@ export function Header({ links, cta }: HeroNavProps) {
           {/* Mobile hamburger */}
           <button
             type="button"
-            className="md:hidden p-2 rounded-md transition-colors hover:bg-white/5"
-            style={{ color: "rgba(253, 253, 253, 0.75)" }}
+            className={`md:hidden p-2 rounded-md transition-colors ${
+              scrolled ? "hover:bg-gray-100 text-gray-700" : "hover:bg-white/5"
+            }`}
+            style={{ color: scrolled ? undefined : "rgba(253, 253, 253, 0.75)" }}
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
           >

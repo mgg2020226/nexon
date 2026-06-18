@@ -39,30 +39,44 @@ html {
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --font-heading: var(--font-heading);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+
+  /* Nexon Official Colors */
+  --blue-cyan: #50CEFF;
+  --blue-primary: #133ED8;
+  --blue-navy: #020367;
+  --black-nexon: #111111;
+
+  /* Semantic Colors */
+  --background: #FFFFFF;
+  --foreground: #020367;
+  --card: #FFFFFF;
+  --card-foreground: #020367;
+  --popover: #FFFFFF;
+  --popover-foreground: #020367;
+  --primary: #133ED8;
+  --primary-foreground: #FFFFFF;
+  --secondary: #50CEFF;
+  --secondary-foreground: #020367;
+  --muted: #F0F4FF;
+  --muted-foreground: #6B7280;
+  --accent: #50CEFF;
+  --accent-foreground: #020367;
+  --destructive: #EF4444;
+  --border: #E5E7EB;
+  --input: #F3F4F6;
+  --ring: #133ED8;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #020367 0%, #133ED8 50%, #50CEFF 100%);
+  --gradient-reverse: linear-gradient(135deg, #50CEFF 0%, #133ED8 50%, #020367 100%);
+  --gradient-subtle: linear-gradient(135deg, #F5F8FF 0%, #E8F4FF 100%);
 }
 
 @layer base {
@@ -70,8 +84,18 @@ html {
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
   }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+  }
+  h1 { @apply text-4xl font-bold; }
+  h2 { @apply text-3xl font-bold; }
+  h3 { @apply text-2xl font-semibold; }
+  h4 { @apply text-xl font-semibold; }
+  h5 { @apply text-lg font-semibold; }
+  h6 { @apply font-semibold; }
 }
 
 @keyframes bgHeroFloat {
