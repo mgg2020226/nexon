@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface Particle {
   id: number;
@@ -17,8 +17,10 @@ interface Particle {
 const PARTICLE_COLORS = ["#50CEFF", "#133ED8", "#020367"];
 
 export function HeroEffects({ particleCount }: { particleCount: number }) {
-  const particles = useMemo(
-    () =>
+  const [particles, setParticles] = useState<Particle[]>([]);
+
+  useEffect(() => {
+    setParticles(
       Array.from({ length: particleCount }, (_, i) => ({
         id: i,
         x: Math.random() * 100,
@@ -29,9 +31,9 @@ export function HeroEffects({ particleCount }: { particleCount: number }) {
         floatX: (Math.random() - 0.5) * 70,
         floatY: (Math.random() - 0.5) * 70,
         colorIndex: i % 3,
-      })),
-    [particleCount]
-  );
+      }))
+    );
+  }, [particleCount]);
   const glowRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
