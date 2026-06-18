@@ -62,7 +62,7 @@ export async function Hero() {
               background:
                 "radial-gradient(ellipse at center top, rgba(80,206,255,0.25) 0%, rgba(19,62,216,0.18) 30%, rgba(2,3,103,0.08) 55%, transparent 70%)",
               filter: "blur(8px)",
-              animation: "bgHeroPulse 4s ease-in-out infinite",
+              animation: "bgHeroPulse 800ms ease-in-out infinite",
             }}
           />
 

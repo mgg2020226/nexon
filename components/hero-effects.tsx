@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useEffect, useRef, useState } from "react";
+import { useMemo, useEffect, useRef } from "react";
 
 interface Particle {
   id: number;
@@ -17,8 +17,6 @@ interface Particle {
 const PARTICLE_COLORS = ["#50CEFF", "#133ED8", "#020367"];
 
 export function HeroEffects({ particleCount }: { particleCount: number }) {
-  const [hydrated, setHydrated] = useState(false);
-
   const particles = useMemo(
     () =>
       Array.from({ length: particleCount }, (_, i) => ({
@@ -35,10 +33,6 @@ export function HeroEffects({ particleCount }: { particleCount: number }) {
     [particleCount]
   );
   const glowRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    setHydrated(true);
-  }, []);
 
   useEffect(() => {
     const card = glowRef.current?.closest("[data-hero-card]") as HTMLElement | null;
@@ -63,7 +57,8 @@ export function HeroEffects({ particleCount }: { particleCount: number }) {
       />
 
       {/* Floating particles */}
-      {hydrated && particles.map((p) => (
+      <div suppressHydrationWarning>
+      {particles.map((p) => (
         <div
           key={p.id}
           aria-hidden
@@ -83,6 +78,7 @@ export function HeroEffects({ particleCount }: { particleCount: number }) {
           } as React.CSSProperties}
         />
       ))}
+      </div>
     </>
   );
 }
