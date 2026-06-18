@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, IBM_Plex_Sans } from "next/font/google";
 import { Providers } from "@/components/providers";
+import { FloatingWhatsAppButton } from "@/components/floating-whatsapp-button";
 import "./globals.css";
 
 const ibmPlexSans = IBM_Plex_Sans({
@@ -40,6 +41,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <Providers>{children}</Providers>
+        <FloatingWhatsAppButton />
       </body>
     </html>
   );
