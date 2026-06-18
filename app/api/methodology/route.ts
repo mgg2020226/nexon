@@ -8,7 +8,7 @@ const content: MethodologyContent = {
   description:
     "Nuestro enfoque está basado en soluciones a la medida y resultados medibles.",
   bannerStatement: "No solo diseñamos estrategias.",
-  bannerAccent: "Generamos crecimiento real y sostenible.",
+  bannerAccent: "Generamos crecimiento sostenible.",
   steps: [
     {
       number: "01",
@@ -40,7 +40,7 @@ const content: MethodologyContent = {
       image: "/methodology/ejecuta.png",
       title: "Ejecutar y acompañar",
       description:
-        "Implementamos la estrategia junto a tu equipo, brindando acompañamiento cercano para asegurar una ejecución efectiva y ágil.",
+        "Implementamos la estrategia con tu equipo, asegurando una ejecución ágil y resultados measurables.",
     },
     {
       number: "05",

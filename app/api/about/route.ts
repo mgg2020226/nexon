@@ -27,7 +27,7 @@ const content: AboutContent = {
   card: {
     title: "Crecemos junto a nuestros clientes.",
     description:
-      "Aportamos experiencia, conexiones y herramientas para convertir oportunidades en resultados reales y sostenibles.",
+      "Aportamos experiencia, conexiones y herramientas para convertir oportunidades en resultados medibles.",
   },
 };
 

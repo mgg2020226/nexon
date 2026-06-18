@@ -3,17 +3,17 @@ import type { GrowthStoriesContent } from "@/lib/queries/growth-stories";
 
 const content: GrowthStoriesContent = {
   label: "HISTORIAS DE CRECIMIENTO",
-  heading: "Impacto que genera",
-  headingAccent: "resultados",
+  heading: "Resultados que",
+  headingAccent: "generamos",
   description:
-    "Casos reales donde la estrategia y ejecución convirtieron desafíos en oportunidades de crecimiento sostenible.",
+    "Casos donde la estrategia y ejecución convirtieron desafíos en oportunidades de crecimiento.",
   stories: [
     {
       icon: "Store",
       visual: "expansion",
       title: "Expansión Comercial",
       description:
-        "Triplicamos la presencia comercial de una empresa de distribución en 8 meses, abriendo 3 nuevas regiones con ventas desde el primer trimestre.",
+        "Triplicamos la presencia comercial de una distribuidora en 8 meses, abriendo 3 nuevas regiones con ventas desde el primer trimestre.",
       metric: "+147%",
       metricLabel: "en ingresos",
       link: "#",
@@ -23,7 +23,7 @@ const content: GrowthStoriesContent = {
       visual: "markets",
       title: "Nuevos Mercados",
       description:
-        "Identificamos y explotamos 5 mercados internacionales para una firma de servicios profesionales en menos de un año.",
+        "Identificamos y entramos en 5 mercados internacionales para una firma de servicios en menos de un año.",
       metric: "5",
       metricLabel: "mercados nuevos",
       link: "#",
@@ -31,9 +31,9 @@ const content: GrowthStoriesContent = {
     {
       icon: "Rocket",
       visual: "startup",
-      title: "Startups en escalamiento",
+      title: "Escalamiento Startup",
       description:
-        "Acompañamos a una startup tecnológica desde etapa seed hasta Serie A, multiplicando su ARR por 8 en 24 meses.",
+        "Llevamos una startup tecnológica de seed a Serie A, multiplicando su ARR por 8 en 24 meses.",
       metric: "8x",
       metricLabel: "en ARR",
       link: "#",
@@ -51,9 +51,9 @@ const content: GrowthStoriesContent = {
     {
       icon: "BarChart2",
       visual: "intelligence",
-      title: "Inteligencia de negocios",
+      title: "Inteligencia Comercial",
       description:
-        "Implementamos un sistema de inteligencia comercial que permitió tomar decisiones con datos en tiempo real, logrando un ROI de 3.2x.",
+        "Implementamos un sistema de inteligencia comercial para decisiones basadas en datos en tiempo real, con ROI de 3.2x.",
       metric: "3.2x",
       metricLabel: "ROI promedio",
       link: "#",
@@ -61,11 +61,11 @@ const content: GrowthStoriesContent = {
     {
       icon: "Handshake",
       visual: "alliances",
-      title: "Alianzas estratégicas",
+      title: "Alianzas Estratégicas",
       description:
-        "Estructuramos alianzas comerciales que abrieron canales de distribución con alcance a más de 1M de clientes potenciales.",
+        "Estructuramos alianzas que abrieron canales de distribución con alcance a más de 1M de clientes.",
       metric: "1M+",
-      metricLabel: "clientes potenciales",
+      metricLabel: "clientes alcanzados",
       link: "#",
     },
   ],

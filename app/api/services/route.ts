@@ -6,7 +6,7 @@ const servicesContent: ServicesContent = {
   heading: "Impulsamos cada etapa",
   headingAccent: "de tu crecimiento",
   description:
-    "Combinamos estrategia, desarrollo comercial y marketing para transformar oportunidades en resultados reales y sostenibles.",
+    "Combinamos estrategia, desarrollo comercial y marketing para transformar oportunidades en resultados.",
   services: [
     {
       icon: "TrendingUp",
