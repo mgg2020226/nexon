@@ -10,8 +10,8 @@ const heroContent: HeroContent = {
       { label: "Contacto",    href: "#contacto" },
     ],
     cta: "Hablemos",
+    href: "https://api.whatsapp.com/send/?phone=573229603465&text=Hello%2C+I%E2%80%99m+interested+in+exploring+how+Nexon+can+help+our+company+enter+and+grow+in+the+Colombian+market.&type=phone_number&app_absent=0",
   },
-  badge: "Tu próxima oportunidad",
   heading: {
     lines: ["Impulsamos empresas", "que quieren crecer"],
     accent: "más rápido.",
@@ -19,7 +19,8 @@ const heroContent: HeroContent = {
   description:
     "Convertimos estrategia, desarrollo comercial y marketing en oportunidades reales de crecimiento.",
   cta: {
-    text: "Ver cómo trabajamos",
+    text: "Contactanos",
+    href: "#contacto"
   },
   watermark: "NEXON",
   particleCount: 24,

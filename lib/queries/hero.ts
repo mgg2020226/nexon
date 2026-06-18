@@ -6,6 +6,7 @@ export interface NavLink {
 export interface HeroNav {
   links: NavLink[];
   cta: string;
+  href: string;
 }
 
 export interface HeroHeading {
@@ -15,11 +16,11 @@ export interface HeroHeading {
 
 export interface HeroCta {
   text: string;
+  href: string;
 }
 
 export interface HeroContent {
   nav: HeroNav;
-  badge: string;
   heading: HeroHeading;
   description: string;
   cta: HeroCta;

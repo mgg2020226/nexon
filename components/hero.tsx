@@ -86,21 +86,6 @@ export async function Hero() {
 
               {/* Left column — Badge + Headline */}
               <div className="flex flex-col gap-6 lg:w-[65%]">
-                <Badge
-                  variant="outline"
-                  className="text-xs font-medium px-3 py-1 rounded-full gap-2 w-fit"
-                  style={{
-                    borderColor: "rgba(80,206,255,0.25)",
-                    background: "rgba(19,62,216,0.15)",
-                    color: "rgba(80,206,255,0.85)",
-                  }}
-                >
-                  <span
-                    className="w-1.5 h-1.5 rounded-full animate-pulse"
-                    style={{ background: "#50CEFF" }}
-                  />
-                  {data.badge}
-                </Badge>
 
                 <h1 className="text-3xl md:text-5xl lg:text-7xl font-extrabold text-white leading-[1.05] tracking-tight">
                   {data.heading.lines.map((line) => (
@@ -126,12 +111,12 @@ export async function Hero() {
               <div className="flex flex-col gap-6 lg:w-[35%] lg:justify-center">
                 <p
                   className="text-base md:text-lg leading-relaxed"
-                  style={{ color: "rgba(255,255,255,0.55)" }}
+                  style={{ color: "rgba(255, 255, 255, 0.81)" }}
                 >
                   {data.description}
                 </p>
 
-                <a href="https://api.whatsapp.com/send/?phone=573229603465&text=Hello%2C+I%E2%80%99m+interested+in+exploring+how+Nexon+can+help+our+company+enter+and+grow+in+the+Colombian+market.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">
+                <a href={data.cta.href} rel="noopener noreferrer">
                   <Button
                     size="lg"
                     className="font-semibold px-6 h-11 gap-2 rounded-lg border-0 w-fit"

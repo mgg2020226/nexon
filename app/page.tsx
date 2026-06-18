@@ -29,7 +29,7 @@ export default async function Home() {
 
   return (
     <>
-      <Header links={heroData.nav.links} cta={heroData.nav.cta} />
+      <Header links={heroData.nav.links} cta={heroData.nav.cta}  href={heroData.nav.href}/>
       <Hero />
       <Costumers logos={customersData.customers} />
       <BentoServices data={servicesData} />
