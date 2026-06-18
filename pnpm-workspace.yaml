@@ -1,0 +1,9 @@
+packages:
+  - "."
+
+minimumReleaseAge: 10080
+minimumReleaseAgeExclude:
+  - "@tailwindcss/oxide*"
+  - "@emnapi/*"
+  - "@img/*"
+trustPolicy: no-downgrade
