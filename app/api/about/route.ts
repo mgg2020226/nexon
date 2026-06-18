@@ -3,7 +3,7 @@ import type { AboutContent } from "@/lib/queries/about";
 
 const content: AboutContent = {
   label: "¿QUIÉNES SOMOS?",
-  heading: "Impulsamos crecimiento, y",
+  heading: "Impulsamos crecimiento y",
   headingAccent: "nuevas oportunidades",
   paragraphs: [
     {
