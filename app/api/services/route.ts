@@ -27,7 +27,7 @@ const servicesContent: ServicesContent = {
     {
       icon: "Handshake",
       image: "/services/negocios.png",
-      title: "Desarrollo de Negocios",
+      title: "Desarrollo de negocios",
       description:
         "Abrimos puertas a nuevos mercados, generamos alianzas estratégicas y creamos oportunidades comerciales.",
       tag: "Negocios",
@@ -43,7 +43,7 @@ const servicesContent: ServicesContent = {
     {
       icon: "Megaphone",
       image: "/services/marketing.png",
-      title: "Growth Marketing",
+      title: "Growth marketing",
       description:
         "Convertimos visibilidad en demanda a través de estrategias de marketing orientadas a resultados.",
       tag: "Marketing",

@@ -23,7 +23,7 @@ const content: GrowthStoriesContent = {
       visual: "markets",
       title: "Nuevos Mercados",
       description:
-        "Identificamos y penetramos 5 mercados internacionales para una firma de servicios profesionales en menos de un año.",
+        "Identificamos y explotamos 5 mercados internacionales para una firma de servicios profesionales en menos de un año.",
       metric: "5",
       metricLabel: "mercados nuevos",
       link: "#",
@@ -31,7 +31,7 @@ const content: GrowthStoriesContent = {
     {
       icon: "Rocket",
       visual: "startup",
-      title: "Startups en Escalamiento",
+      title: "Startups en escalamiento",
       description:
         "Acompañamos a una startup tecnológica desde etapa seed hasta Serie A, multiplicando su ARR por 8 en 24 meses.",
       metric: "8x",
@@ -41,7 +41,7 @@ const content: GrowthStoriesContent = {
     {
       icon: "Megaphone",
       visual: "marketing",
-      title: "Growth Marketing",
+      title: "Growth marketing",
       description:
         "Rediseñamos el embudo de adquisición de una empresa B2B, reduciendo el CAC un 40% y duplicando las conversiones.",
       metric: "2x",
@@ -51,7 +51,7 @@ const content: GrowthStoriesContent = {
     {
       icon: "BarChart2",
       visual: "intelligence",
-      title: "Inteligencia de Negocios",
+      title: "Inteligencia de negocios",
       description:
         "Implementamos un sistema de inteligencia comercial que permitió tomar decisiones con datos en tiempo real, logrando un ROI de 3.2x.",
       metric: "3.2x",
@@ -61,7 +61,7 @@ const content: GrowthStoriesContent = {
     {
       icon: "Handshake",
       visual: "alliances",
-      title: "Alianzas Estratégicas",
+      title: "Alianzas estratégicas",
       description:
         "Estructuramos alianzas comerciales que abrieron canales de distribución con alcance a más de 1M de clientes potenciales.",
       metric: "1M+",
