@@ -21,17 +21,22 @@ function StatCounter({ raw, visible }: { raw: string; visible: boolean }) {
   useEffect(() => {
     if (!visible || number === 0) return;
     const duration = 1200;
-    const steps = 40;
-    const increment = number / steps;
-    let current = 0;
-    let step = 0;
-    const timer = setInterval(() => {
-      step++;
-      current = Math.min(Math.round(increment * step), number);
+    const startTime = Date.now();
+    let animationId: number;
+
+    const animate = () => {
+      const elapsed = Date.now() - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const current = Math.round(number * progress);
       setCount(current);
-      if (step >= steps) clearInterval(timer);
-    }, duration / steps);
-    return () => clearInterval(timer);
+
+      if (progress < 1) {
+        animationId = requestAnimationFrame(animate);
+      }
+    };
+
+    animationId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animationId);
   }, [visible, number]);
 
   if (number === 0) return <span>{raw}</span>;
@@ -46,15 +51,18 @@ export function About({ data }: { data: AboutContent }) {
     <section
       ref={ref}
       className="relative w-full overflow-hidden py-24"
+      style={{ contain: "layout style paint" }}
     >
       {/* Background image */}
       <Image
         src="/backgrounds/backgrounds.png"
         alt=""
         fill
-        sizes="100vw"
+        sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 80vw"
         className="object-cover"
         priority
+        quality={75}
+        loading="eager"
       />
       {/* Dark overlay */}
       <div
@@ -67,8 +75,9 @@ export function About({ data }: { data: AboutContent }) {
 
           {/* ── Left: text content ───────────────────────────────── */}
           <div
-            className={`flex flex-col gap-8 transition-all duration-700 ${visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-6"
+            className={`flex flex-col gap-8 transition-opacity transition-transform duration-700 ${visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-6"
               }`}
+            style={{ willChange: visible ? "opacity, transform" : "auto" }}
           >
             {/* Label */}
             <div className="flex flex-col gap-2">
@@ -130,18 +139,21 @@ export function About({ data }: { data: AboutContent }) {
 
           {/* ── Right: stats grid ────────────────────────────────── */}
           <div
-            className={`grid grid-cols-2 gap-3 transition-all duration-700 delay-150 ${visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-6"
+            className={`grid grid-cols-2 gap-3 transition-opacity transition-transform duration-700 delay-150 ${visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-6"
               }`}
+            style={{ willChange: visible ? "opacity, transform" : "auto" }}
           >
             {data.stats.map((stat) => {
               const Icon = iconMap[stat.icon] ?? Building2;
               return (
                 <div
                   key={stat.label}
-                  className="flex flex-col gap-3 rounded-xl p-4 transition-all duration-300 hover:-translate-y-0.5"
+                  className="flex flex-col gap-3 rounded-xl p-4 transition-transform duration-300 hover:-translate-y-0.5 active:scale-95 md:active:scale-100"
                   style={{
                     background: "rgba(19,62,216,0.08)",
                     border: "1px solid rgba(80,206,255,0.12)",
+                    willChange: "transform",
+                    contain: "layout style paint",
                   }}
                 >
                   <div
