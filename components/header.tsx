@@ -37,13 +37,15 @@ export function Header({ links, cta, href }: HeroNavProps) {
         {/* Main bar */}
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Image
-            src={scrolled ? "/logotipo_black.svg" : "/logotipo_white.svg"}
-            alt="Nexon logo"
-            width={120}
-            height={120}
-            className="rounded-lg flex-shrink-0 transition-opacity duration-300"
-          />
+          <a href="#inicio" className="flex-shrink-0 hover:opacity-80 transition-opacity">
+            <Image
+              src={scrolled ? "/logotipo_black.svg" : "/logotipo_white.svg"}
+              alt="Nexon logo"
+              width={120}
+              height={120}
+              className="rounded-lg transition-opacity duration-300"
+            />
+          </a>
 
           {/* Desktop nav — centered absolutely */}
           <ul className="hidden md:flex items-center gap-1 absolute left-1/2 -translate-x-1/2">
